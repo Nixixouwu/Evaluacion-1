@@ -1,0 +1,47 @@
+html,body{height: 100%;}
+
+.button1 {
+
+    margin-left: 10%;
+    padding: 5px;
+    width: 300px;
+  }
+
+.logo {
+    position: relative;
+    height: 250px;
+    width: 450px;
+    margin-left: -17%;
+    margin-top: -7%;
+
+    
+}
+
+.icono {
+    height: 60px;
+    width: 60px;
+}
+
+.tflupa {
+    margin-left: -45px;
+    margin-top: 15px;
+}
+
+.inicio {
+    display: inline-block;
+    margin-left: 300px;
+}
+
+.imagen {
+    width: 100%;
+    height: auto;
+}
+
+.solid {
+    border-top: 3px solid black;
+}
+
+.gris {
+    width: 300px;
+    height: 300px;
+}
