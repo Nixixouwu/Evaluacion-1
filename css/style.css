@@ -9,7 +9,7 @@ html,body{height: 100%;}
 
 .logo {
     position: relative;
-    height: 250px;
+    height: auto;
     width: 450px;
     margin-left: -17%;
     margin-top: -7%;
@@ -18,7 +18,7 @@ html,body{height: 100%;}
 }
 
 .icono {
-    height: 60px;
+    height: auto;
     width: 60px;
 }
 
