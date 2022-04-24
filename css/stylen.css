@@ -13,8 +13,6 @@ html,body{height: 100%;}
     width: 450px;
     margin-left: -17%;
     margin-top: -7%;
-
-    
 }
 
 .icono {
@@ -54,3 +52,7 @@ html,body{height: 100%;}
     margin-left: 65%;
 }
 
+.imagenong {
+    width: 100%;
+    height: auto;
+}
