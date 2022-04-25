@@ -86,3 +86,37 @@ html,body{height: 100%;}
     left: 20px;
     margin-top: 300;
 }
+.titulo {
+    width: auto;
+    height: auto;
+    margin-left: 50px;
+}
+.sub-titulo{
+    width: auto;
+    height: auto;
+    margin:auto;
+}
+.titu4{
+    white-space: nowrap;
+    margin-top: 100px;
+}
+.imgdesp{
+    width: 200%;
+    margin-left: auto;
+}
+.radiobutton{
+    margin-left: 40%;
+    margin-top: 15%;
+}
+.i-despacho{
+    width: 40%;
+    height: auto;
+    margin-left: 5%;
+}
+.despacho{
+    margin-left: 15%;
+    margin-top: 10%;
+}
+.entrega{
+    margin-top: 10%;
+}
