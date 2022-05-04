@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/stylen.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Regístrate</title>
+
+<script>
+$(document).ready(function(){
+    //$("#btnsubmit").on("click", function() {
+        $("#nombre").focusout(function(){
+            
+                debugger;
+                if ($("#nombre").val().trim().length == 0) {
+                    //mostrar alerta
+                    console.log($('#nombre')[0]);
+                    $('#nombre')[0].setCustomValidity('mensaje de prueba');
+                    $('#nombre')[0].reportValidity();
+
+                }
+            }
+    );
+});        
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="row">
+        <nav>
+            <div class="col-4 col-md-5 col-lg-5">
+            <img src="img/logo.png" class="logo">
+            </div>
+            <div class="col-8 col-md-7 col-lg-7">
+            <ul class="nav-links">
+                <li><a href="login.html"><img src="img/lupa.png"></a></li>
+                <li>
+                    <input type="search" id="form1" class="form-control" placeholder="Buscar..." aria-label="Search" />
+                </li>
+                <li><img src="img/camion.png"></li>
+                <li><img src="img/carro de compras.png"></li>
+                <li>
+    
+                <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="img/usuario.png" alt="">
+                </button>
+                            
+                <form class="dropdown-menu p-4">
+                    <p>Inicia sesión</p>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Nombre">
+                     </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña">
+                    </div>
+                                
+                    <a href="">¿Olvidaste tu contraseña?</a>
+                    <br><br>
+                    <button type="submit" class="btn btn-success" >Iniciar sesión</button><br>
+                    <button type="button" class="btn btn-outline-dark" style="width: 100%;">Regístrate</button>
+                </form>
+                              
+                </div>                    
+                                            
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    </div>
+
+<div class="container-fluid">
+
+
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                    Inicio
+                </a>
+        </div>
+            <div class="col-md-3">
+                <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                    Productos
+                </a>
+        </div>
+            <div class="col-md-3">
+                <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                    Quiénes somos
+                </a>
+        </div>
+            <div class="col-md-3">
+                <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                    Donaciones
+                </a>
+        </div>
+        </div>
+
+    <br>
+
+
+
+
+        <div class="row">
+            <h1 style="color: #385C3A;">Regístrate</h1>
+            <div class="row">
+
+            </div>
+            <div class="col-5">
+                <img src="img/imagenlogin.png" class="imagenlogin">
+            </div>
+            
+            <div class="col-7" style="background-color: rgb(175, 216, 185);">
+            <div class="form-group">
+                <br>
+                <input type="text" id="nombre" class="form-control" placeholder="Ingresa tu nombre">
+                <br>
+                <input type="text" id="apellido" class="form-control" placeholder="Ingresa tu apellido">
+                <br>
+                <input type="text" id="rut" class="form-control" placeholder="Ingresa tu rut">
+                <br>
+                <input type="email" id="email" class="form-control" placeholder="Ingresa tu e-mail">
+                <br>
+                <input type="number" id="telefono" class="form-control" placeholder="Ingresa tu número de teléfono">
+                <br>
+                <input type="password" id="contraseña" class="passwordbtn" placeholder="Crea tu contraseña">
+                <input type="password" id="contraseñac" class="passwordbtn" placeholder="Confirma tu contraseña">
+                <br> <br>
+                <input type="checkbox" id="terminos" class="form-check-input">
+                <label for="terminos" class="">Al registrarte aceptas los <a href="">términos y condiciones</a></label>
+                <br>
+                <input type="checkbox" id="notificaciones" class="form-check-input">
+                <label for="notificaciones">Recibir notificaciones sobre descuentos y promociones</label>
+
+                
+
+
+            </div>
+            <br>
+        </div>
+        </div>
+
+
+
+
+    <div class="row">
+        <button type="submit" id="btnsubmit" class="registerbtn">Registrarme</button>
+    </div>
+</div>
+
+<br>
+
+<br>
+
+    <footer>  
+
+        <div class="row">
+            <div class="col-12 col-md-3 col-lg-3" style="background-color: rgba(200,219,201,255);">
+            <b><h4 class="titulofooter">TIENDAJARDÍN</h4></b>
+            <a class="textofooter" href="">Quiénes somos</a>  <br>
+            <a class="textofooter" href="">Vende en Tienda Jardín</a>  <br>
+            <a class="textofooter" href="">Despachos</a> <br>
+            <a class="textofooter" href="">Cambios y devoluciones</a>  <br>
+            <a class="textofooter" href="">Contacto</a>  <br>
+            <a class="textofooter" href="">Términos de servicio</a>  <br>
+            <a class="textofooter" href="">Política de reembolso</a> 
+            </div>
+            <div class="col-12 col-md-7 col-lg-7" style="background-color: rgba(200,219,201,255);">
+            <b><h4 class="titulofooter">Contactos:</h4></b>
+            <a class="textofooter" href=""> contacto@TuJardinDeTotoras.cl</a> <br>
+            <a class="textofooter" href=""> Políticas de privacidad </a> <br>
+            <a class="textofooter" href=""> Términos y condiciones </a>
+            </div>
+            <div class="col-12 col-md-2 col-lg-2" style="background-color: rgba(200,219,201,255);">
+                <img src="img/ong.png" class="imagenong">
+    
+            </div>
+        </div>
+    </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+
+
+</body>
+</html>
