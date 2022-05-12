@@ -17,8 +17,7 @@ $(document).ready(function(){
                 debugger;
                 if ($("#nombre").val().trim().length == 0) {
                     //mostrar alerta
-                    console.log($('#nombre')[0]);
-                    $('#nombre')[0].setCustomValidity('mensaje de prueba');
+                    $('#nombre')[0].setCustomValidity('Por favor, inserte su nombre.');
                     $('#nombre')[0].reportValidity();
 
                 }
@@ -29,8 +28,7 @@ $(document).ready(function(){
             
             if ($("#apellido").val().trim().length == 0) {
                 //mostrar alerta
-                console.log($('#nombre')[0]);
-                $('#apellido')[0].setCustomValidity('mensaje de prueba');
+                $('#apellido')[0].setCustomValidity('Por favor, inserte su apellido.');
                 $('#apellido')[0].reportValidity();
 
             }
@@ -83,7 +81,7 @@ valor = valor.replace('.','');
     dv = (dv == 0)?11:dv;
     
     // Validar que el Cuerpo coincide con su Dígito Verificador
-    if(dvEsperado != dv) { $('#rut')[0].setCustomValidity('Rut inválido');
+    if(dvEsperado != dv) { $('#rut')[0].setCustomValidity('Rut inválido.');
                     $('#rut')[0].reportValidity(); return false; }
     
     // Si todo sale bien, eliminar errores (decretar que es válido)
@@ -95,14 +93,63 @@ valor = valor.replace('.','');
 
 )
 
-$("#email").focusout(function(CheckEmail){
+$("#email").focusout(function(){
             
-                //$('#email')[0].setCustomValidity('mensaje de prueba');
-                //$('#email')[0].reportValidity();
+            if ($("#email").val().trim().length == 0) {
+                //mostrar alerta
+                $('#email')[0].setCustomValidity('Por favor, ingrese su email.');
+                $('#email')[0].reportValidity();
 
-            
+            }
         }
 );
+
+$("#telefono").focusout(function(){
+            
+            if ($("#telefono").val().trim().length == 0) {
+                //mostrar alerta
+                $('#telefono')[0].setCustomValidity('Por favor, ingrese su número telefónico.');
+                $('#telefono')[0].reportValidity();
+
+            }
+        }
+);
+
+$("#contraseña").focusout(function(){
+            
+            if ($("#contraseña").val().trim().length == 0) {
+                //mostrar alerta
+                $('#contraseña')[0].setCustomValidity('Por favor, ingrese una contraseña.');
+                $('#contraseña')[0].reportValidity();
+
+            }
+        }
+);
+
+$("#contraseñac").focusout(function(){
+            
+            var contra = $("#contraseña").val();
+            var contrac = $("#contraseñac").val();
+
+            if (contra != contrac)
+            {
+            $('#contraseñac')[0].setCustomValidity('La contraseña no coincide.');
+            $('#contraseñac')[0].reportValidity();
+            }
+
+            else if ($("#contraseña").val().trim().length == 0)
+            {
+            $('#contraseñac')[0].setCustomValidity('Por favor, confirme su contraseña.');
+            $('#contraseñac')[0].reportValidity();
+            }
+            
+}
+);
+
+
+
+
+
 
 
 
@@ -135,51 +182,58 @@ $("#email").focusout(function(CheckEmail){
 
 <body>
 
-    <div class="header">
-        <div class="row">
-        <nav>
-            <div class="col-4 col-md-5 col-lg-5">
-            <img src="img/logo.png" class="logo">
-            </div>
-            <div class="col-8 col-md-7 col-lg-7">
-            <ul class="nav-links">
-                <li><a href="login.html"><img src="img/lupa.png"></a></li>
-                <li>
-                    <input type="search" id="form1" class="form-control" placeholder="Buscar..." aria-label="Search" />
-                </li>
-                <li><img src="img/camion.png"></li>
-                <li><img src="img/carro de compras.png"></li>
-                <li>
-    
-                <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="img/usuario.png" alt="">
-                </button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand col-6 col-md-7" href="#"><img src="img/logo.png" class="logo"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse col-6 col-md-5" id="navbarNavDropdown">
+
+          <ul class="navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><img src="img/lupa.png" width="50px"></a>
+            </li>
+
+            <li>
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search" style="margin-top: 14px; max-width: 200px;">
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><img src="img/camion.png" width="50px"></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><img src="img/carro de compras.png" width="50px"></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="img/usuario.png" width="50px">
+              </a>
+              
+              <form class="dropdown-menu p-4">
+                <p>Inicia sesión</p>
+                <div class="form-group">
+                    <input type="email" class="form-control"  id="exampleDropdownFormEmail2" placeholder="Nombre">
+                 </div>
+                <br>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña">
+                </div>
                             
-                <form class="dropdown-menu p-4">
-                    <p>Inicia sesión</p>
-                    <div class="form-group">
-                        <input type="email" class="form-control"  id="exampleDropdownFormEmail2" placeholder="Nombre">
-                     </div>
-                    <br>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña">
-                    </div>
-                                
-                    <a href="">¿Olvidaste tu contraseña?</a>
-                    <br><br>
-                    <button type="submit" class="btn btn-success" >Iniciar sesión</button><br>
-                    <button type="button" class="btn btn-outline-dark" style="width: 100%;">Regístrate</button>
-                </form>
-                              
-                </div>                    
-                                            
-                </li>
-            </ul>
+                <a href="">¿Olvidaste tu contraseña?</a>
+                <br><br>
+                <button type="submit" class="btn btn-success" style="width: 100%;" >Iniciar sesión</button><br>
+                <button type="button" class="btn btn-outline-dark" style="width: 100%;">Regístrate</button>
+            </form>
+
+            </li>
+          </ul>
         </div>
-        </nav>
-    </div>
-    </div>
+      </nav>
 
 <div class="container-fluid">
 

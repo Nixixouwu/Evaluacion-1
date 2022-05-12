@@ -1,6 +1,6 @@
 html,body{height: 100%;}
 
-
+ 
 .solid{
     border-top: 3px solid black;
 }
@@ -11,7 +11,9 @@ html,body{height: 100%;}
     height: auto;
 }
 
-
+.center p{
+    text-align: center;
+}
 
 .imagenong {
     width: 100%;
@@ -74,14 +76,9 @@ html,body{height: 100%;}
     position: relative;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .logo {
-    width: 140px;
+    width: 120px;
+    padding: 7px;
 }
 
 .nav-links{
@@ -127,52 +124,12 @@ nav{
     box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
 }
 
-.slider-frame{
-    width: 100%;
-    height: auto;
-    margin: 50px auto 0;
-    overflow: hidden;
-    animation: slide 5s infinite alternate ease-in-out;
-}
-
-.slider-frame ul{
-    display: flex;
-    padding: 0;
-    width: 400%;
-}
-
-.slider-frame li{
-    list-style: none;
-    width: 100%;
-}
-
-.slider-frame img{
-    width: 100%;
-}
 .titulofooter{
-
 margin-left: 4%;
-
 }
 
 .textofooter{
-
     margin-left: 4%;
-
 }
 
-@keyframes slide {
-    0% {margin-left: 0%;}
-    20% {margin-left: 0%;}
 
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
-
-
-}
