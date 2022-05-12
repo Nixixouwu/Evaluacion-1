@@ -1,4 +1,7 @@
-html,body{height: 100%;}
+html,body{height: 100%;
+    padding: 10px;
+
+}
 
 .button1 {
 
@@ -119,4 +122,48 @@ html,body{height: 100%;}
 }
 .entrega{
     margin-top: 10%;
+}
+#targetaD{
+    width:100%;
+    height: 200px;
+    border-bottom: 3px solid #000000;
+}
+#targetaC{
+    width:100%;
+    height: 200px;
+    border-bottom: 3px solid #000000;
+}
+#btn1{
+    margin: 50px;
+    margin-top: 90px;
+}
+#visa{
+    width: 300px;
+    margin-top: 60px;
+}
+#datos_targetaC{
+    height: 250px;
+    width: 100%;
+    display: none;
+    border-bottom: 3px solid #000000;
+}
+#datos_targetaD{
+    height: 250px;
+    width: 100%;
+    display: none;
+    border-bottom: 3px solid #000000;
+}
+.form_datos{
+    width: 50%;
+    padding: 20px;
+}
+.form_datos input{
+    width: 70%;
+    padding-top: 0px;
+    height: auto;
+}
+#btncompra{
+    margin-left: 10%;
+    width: 80%;
+    background-color:;
 }
