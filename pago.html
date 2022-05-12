@@ -25,7 +25,60 @@
     </script>
 </head>
 <body>
-    <div class="container fluid;">
+    <header class="navbar navbar-expand-md bd-navbar bg-light">
+        <div class="container-fluid">
+          <div class="col-12">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light flex-wrap flex-md-nowrap" aria-label="Main navigation">
+              
+                <a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      
+                  <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                    <li class="nav-item col-3 col-md-auto col-lg-auto">
+                      <img class="btn btn-outline" type="submit" src="img/lupa.png" width="60px" style="margin-top: 20px ;"></a>
+                  </li>
+                  <li class="nav-item dropdown col-9 col-md-auto col-lg-auto">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="margin-top: 20px;">
+                  </li>
+                    <li class="nav-item col-4 col-md-auto">
+                      <a class="nav-link" href="#"><img src="img/camion.png" width="60px"></a>
+                    </li>
+                    <li class="nav-item col-4 col-md-auto">
+                      <a class="nav-link" href="#"><img src="img/carro de compras.png" width="60px" ></a>
+                    </li>
+      
+                    <li class="nav-item dropdown col-4 col-md-auto">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="img/usuario.png" width="60px">
+                      </a>
+                      <form class="dropdown-menu p-4" style="position: absolute; transform: translate(-80px, 0px);">
+                        <p>Inicia sesión</p>
+                        <div class="form-group">
+                            <input type="email" class="form-control"  id="exampleDropdownFormEmail2" placeholder="Nombre">
+                         </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña">
+                        </div>
+                                    
+                        <a href="">¿Olvidaste tu contraseña?</a>
+                        <br><br>
+                        <button type="submit" class="btn btn-success" style="width: 100%;" >Iniciar sesión</button><br>
+                        <button type="button" class="btn btn-outline-dark" style="width: 100%;">Regístrate</button>
+                    </form>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                </div>
+              
+          </nav>
+        </div>
+      </header>
+    <div class="container fluid;" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-9">
                 <div class="row">
