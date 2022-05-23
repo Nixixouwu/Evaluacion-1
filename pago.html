@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css_mauro/style_mauro.css">
     <title>Pago</title>
 
     <script type="text/javascript">
@@ -44,10 +44,10 @@
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="margin-top: 20px;">
                   </li>
                     <li class="nav-item col-4 col-md-auto">
-                      <a class="nav-link" href="#"><img src="img/camion.png" width="60px"></a>
+                      <a class="nav-link" href="despacho_vendedor.html"><img src="img/camion.png" width="60px"></a>
                     </li>
                     <li class="nav-item col-4 col-md-auto">
-                      <a class="nav-link" href="#"><img src="img/carro de compras.png" width="60px" ></a>
+                      <a class="nav-link" href="carrito.html"><img src="img/carro de compras.png" width="60px" ></a>
                     </li>
       
                     <li class="nav-item dropdown col-4 col-md-auto">
@@ -78,6 +78,36 @@
           </nav>
         </div>
       </header>
+      <div class="row"> <!--botones superiores-->
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                Inicio
+            </a>
+        </div>
+       
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="btn-group" style="width: 100%;">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Productos
+                </button>
+                <div class="dropdown-menu" style="width: 100%;">
+                  <a class="dropdown-item" href="#">Herramientas</a>
+                  <a class="dropdown-item" href="plantas.html">Plantas</a>                                       
+                </div>
+              </div>                
+</div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                Quiénes somos
+            </a>
+    </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                Donaciones
+            </a>
+    </div>
+    </div>
     <div class="container fluid;" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-9">
@@ -86,108 +116,130 @@
                         <t1 style="font-weight:bold;">METODO DE PAGO</t1>
                     </div>
                 </div>
-                <div id="targetaD">
+                <div id="targetaD"><!-- tarjeta de debito-->
                     <div class="row">
                         <div class="col-md-5">
-                            <input type="radio" id="btn1" name="btn_targeta" value="d" onclick="mostrarD()">Tageta de Debito
+                            <input type="radio" id="btn1" name="btn_targeta" value="d" onclick="mostrarD()">Tarjeta de Débito
                         </div>
                         <div class="col-auto">
                             <img src="img/redcompra.png">
                         </div>
                     </div>            
                 </div>
-                <div id="targetaC">
+                <div id="datos_targetaD" > <!--  datos  tarjeta de debito-->
+                    <div class="row">
+                        <h4 class="col-auto" style="font-weight: bold; padding-top: 20px;">Ingrese datos de su tarjeta </h4>
+                    </div>
+                    <form name="formularioD"> <!--formulario de tarjeta debito-->
+                        <div class="row">
+                            <label >Número de tarjeta</label>
+                            <br>
+                            <input type="number" id="numTarjetaD" style="width:40%; margin-left:1%;" >
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label > Fecha de expiración</label><br>
+                                <input type="date"  id="dateTarjetaD" style="width:50%;" >
+                            </div>
+                            <div class="col-md-6">
+                                <label > CVV</label><br>
+                                <input type="password" maxlength="3" minlength="3" id="CVVTarjetaD" style="width:50% ;">
+                            </div> 
+                        </div>
+                    </form>
+                </div>
+                <div id="targetaC"> <!-- tarjeta de credito-->
                     <div class="row">
                         <div class="col-md-5">
-                            <input type="radio" id="btn1" name="btn_targeta" value="d" onclick="mostrarC()">Tageta de Credito
+                            <input type="radio" id="btn2" name="btn_targeta" value="c" onclick="mostrarC()">Tarjeta de Crédito
                         </div>
                         <div class="col-auto">
                             <img id="visa" src="img/visa.png">
                         </div>
                     </div>  
                 </div>
-                <div id="datos_targetaC">
+                <div id="datos_targetaC"><!--  datos  tarjeta de credito-->
                     <div class="row">
-                        <h4 class="col-auto" style="font-weight: bold; padding-top: 20px;">Ingrese datos de tu targeta </h4>
+                        <h4 class="col-auto" style="font-weight: bold; padding-top: 20px;">Ingrese datos de su tarjeta </h4>
                     </div>
-                    <div class="row">
-                        <form class="needs-validation" novalidate>
-                            <label >Número de targeta</label>
+                    <form name="formularioC"> <!--formulario de tarjeta credito-->
+                        <div class="row">
+                            <label >Número de tarjeta</label>
                             <br>
-                            <input type="text" required placeholder="xxxx-xxxx-xxxx-xxxx">
-                        </form>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label > fecha de expiración</label><br>
-                            <input type="text" style="width:30%;">
+                            <input type="number" id="numTarjetaC" style="width: 40%; margin: 1%;">
                         </div>
-                        <div class="col-md-4">
-                            <label > cuotas</label><br>
-                            <input type="text" style="width:30%;">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label > Fecha de expiración</label><br>
+                                <input type="date" id="dateTarjetaC" style="width:30%;">
+                            </div>
+                            <div class="col-md-4">
+                                <label > Cuotas</label><br>
+                                <input type="number" id="cuotaTarjetaC" style="width:30%;">
+                            </div>
+                            <div class="col-md-4">
+                                <label > CVV</label><br>
+                                <input type="password" maxlength="3" minlength="3" id="CVVTarjetaC" style="width:30% ;">
+                            </div> 
                         </div>
-                        <div class="col-md-4">
-                            <label > CVV</label><br>
-                            <input type="password" maxlength="3" minlength="3" required style="width:30% ;">
-                        </div> 
-                    </div>
-                </div>
-                <div id="datos_targetaD">
-                    <div class="row">
-                        <h4 class="col-auto" style="font-weight: bold; padding-top: 20px;">Ingrese datos de tu targeta </h4>
-                    </div>
-                    <div class="row">
-                        <form class="needs-validation" novalidate>
-                            <label >Número de targeta</label>
-                            <br>
-                            <input type="text" required placeholder="xxxx-xxxx-xxxx-xxxx">
-                        </form>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label > fecha de expiración</label><br>
-                            <input type="text" style="width:50%;" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label > CVV</label><br>
-                            <input type="password" maxlength="3" minlength="3" required style="width:50% ;">
-                        </div> 
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="col-md-3">
-                <h1 style="margin-top:15%; border-bottom: 3px solid #000;"><center>DESTALLE</center></h1><br>
-                <p>total de productos producto:$74.980 </p><br>
-                <p>descuentos de productos:$0</p><br>
-                <p>Descuento de suscrpción:$3000</p><br>
+                <h1 style="margin-top:15%; border-bottom: 3px solid #000;"><center>DETALLE</center></h1><br>
+                <p>Total de productos:$74.980 </p><br>
+                <p>Descuentos de productos:$0</p><br>
+                <p>Descuento de suscripción:$3000</p><br>
                 <p>valor de despacho: $2000</p><br>
                 <p>Total a pagar: $71.960</p><br>
 
-                <input type="button" value="comprar" class="btn btn-success" style="width:80%; margin-left:10%;">
+                <input type="submit" value="comprar" class="btn btn-success" onclick="enviaFormulario()" style="width:80%; margin-left:10%;">
 
             </div>     
         </div>
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function () {
-            'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                    if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                }, false)
-                })
-            })()
+    <script type="text/javascript"> 
+        function enviaFormulario(){
+            if (document.getElementById('btn1').checked){ //validacion de datos form debito
+                var numTarjetaD = document.getElementById('numTarjetaD');
+                var dateTarjetaD = document.getElementById('dateTarjetaD');
+                var CVVtarjetaD = document.getElementById('CVVTarjetaD');
+                if (numTarjetaD.value === '' ){
+                    alert ("debe ingresar un numero de trajeta")
+                }
+                else if (dateTarjetaD.value === '' ){
+                    alert ("debe ingresar una fecha")
+                }
+                else if (CVVTarjetaD.value === '' ){
+                    alert ("debe ingresar CVV de tarjeta")
+                }
+                else{
+                    document.formularioD.submit()
+                    alert("formulario enviado")
+                }
+            }
+            if (document.getElementById('btn2').checked){  //validacion datos credito
+                var numTarjetaC = document.getElementById('numTarjetaC');
+                var dateTarjetaC = document.getElementById('dateTarjetaC');
+                var cuotaTarjetaC = document.getElementById('cuotaTarjetaC');
+                var CVVtarjetaC = document.getElementById('CVVTarjetaC');
+                if (numTarjetaC.value === '' ){
+                    alert ("debe ingresar un numero de trageta")
+                }
+                else if (dateTarjetaC.value === '' ){
+                    alert ("debe ingresar una fecha")
+                }
+                else if (cuotaTarjetaC.value === '' ){
+                    alert ("debe ingresar cantidad de cuotas")
+                }
+                else if (CVVTarjetaC.value === '' ){
+                    alert ("debe ingresar CVV de targeta")
+                }
+                else{
+                    document.formularioC.submit()
+                    alert("formulario enviado")
+                }
+            }
+        }
     </script>
 </body>
 </html> 

@@ -5,81 +5,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/headers.css">
-    <title>Title</title>
+    <link rel="stylesheet" href="css_mauro/style_mauro.css">
+    <title>Plantas</title>
 
-    <div class="container-fluid">
-        <div class="row">
-        <div class="col-4"><image class="logo2" src="img/logo.png"> </image></div>
-        <div class="col-2" ></div>
-        <div class="col-1" ><image class="lupa"src="img/lupa.png"> </image></div>
-        <div class="col-2" style="margin-top: 2%;"><input type="search" placeholder="Buscar..."  ></div>
-        <div class="col-1"><image class="iconos_superiores"src="img/camion.PNG" > </image> </div>
-        <div class="col-1"><image class="iconos_superiores"src="img/carro de compras.png" > </image> </div>
-        <div class="col-1"><image class="iconos_superiores"src="img/usuario.png" > </image> </div>
-        
-</head>
-
-    </div>
-
-</div>
+    <header class="navbar navbar-expand-md bd-navbar bg-light">
+        <div class="container-fluid">
+          <div class="col-12">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light flex-wrap flex-md-nowrap" aria-label="Main navigation">
+              
+                <a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      
+                  <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                    <li class="nav-item col-3 col-md-auto col-lg-auto">
+                      <img class="btn btn-outline" type="submit" src="img/lupa.png" width="60px" style="margin-top: 20px ;"></a>
+                  </li>
+                  <li class="nav-item dropdown col-9 col-md-auto col-lg-auto">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="margin-top: 20px;">
+                  </li>
+                    <li class="nav-item col-4 col-md-auto">
+                      <a class="nav-link" href="despacho_vendedor.html"><img src="img/camion.png" width="60px"></a>
+                    </li>
+                    <li class="nav-item col-4 col-md-auto">
+                      <a class="nav-link" href="carrito.html"><img src="img/carro de compras.png" width="60px" ></a>
+                    </li>
+      
+                    <li class="nav-item dropdown col-4 col-md-auto">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="img/usuario.png" width="60px">
+                      </a>
+                      <form class="dropdown-menu p-4" style="position: absolute; transform: translate(-80px, 0px);">
+                        <p>Inicia sesión</p>
+                        <div class="form-group">
+                            <input type="email" class="form-control"  id="exampleDropdownFormEmail2" placeholder="Nombre">
+                         </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña">
+                        </div>
+                                    
+                        <a href="">¿Olvidaste tu contraseña?</a>
+                        <br><br>
+                        <button type="submit" class="btn btn-success" style="width: 100%;" >Iniciar sesión</button><br>
+                        <button type="button" class="btn btn-outline-dark" style="width: 100%;">Regístrate</button>
+                    </form>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                </div>
+              
+          </nav>
+        </div>
+      </header>
     
-<body>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                Inicio
+            </a>
+        </div>
+       
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="btn-group" style="width: 100%;">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Productos
+                </button>
+                <div class="dropdown-menu" style="width: 100%;">
+                  <a class="dropdown-item" href="#">Herramientas</a>
+                  <a class="dropdown-item" href="#">Plantas</a>                                       
+                </div>
+              </div>                
+        </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3"><div class="button1">
-                <center>
-                    <button class="button1 name=">Inicio</button>
-                </center></div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                Quiénes somos
+            </a>
         </div>
-            <div class="col-md-3"><div class="button1">
-                <center>
-                    <button class="button1 name=">Productos</button>
-            </center></div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                    Donaciones
+                </a>
+            </div>
         </div>
-            <div class="col-md-3"><div class="button1">
-                <center>
-                    <button class="button1 name=">Quienes somos</button>
-            </center></div>
-        </div>
-            <div class="col-md-3"><div class="button1">
-                <center>
-                    <button class="button1 name=">Donaciones</button>
-            </center></div>
-        </div>
-        </div>
-    </div>
 
     <h3 style="margin-top: 4%; margin-left: 4%;">plantas</h3>
 
-    <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="text-align:center;">
             <div class="col-3"><a href=""><img class="imagen" src="img/planta maceta.png"></a> </div>
             <div class="col-3"><a href=""><img class="imagen" src="img/cactus.png"></a></div>
             <div class="col-3"><a href=""><img class="imagen" src="img/costilla de adan.png"></a></div>
             <div class="col-3"><a href=""><img class="imagen" src="img/echeveria.png"></a></div>
         </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-3"><center>planata de maceta</center></div>
-            <div class="col-3"><center>cactus de maseta</center></div>
-            <div class="col-3"><center>costilla de adan </center></div>
-            <div class="col-3"><center>echeveria</center></div>
+        <div class="row" style="text-align:center;">
+            <div class="col-3"><p>planata de maceta</p></div>
+            <div class="col-3"><p>cactus de maseta</p></div>
+            <div class="col-3"><p>costilla de adan </p></div>
+            <div class="col-3"><p>echeveria</p></div>
         </div>
-    </div>
-    
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-3"><center>$19.990</center></div>
-            <div class="col-3"><center>$14.990</center></div>
-            <div class="col-3"><center>$24.990</center></div>
-            <div class="col-3"><center>$14.990</center></div>
+        <div class="row" style="text-align: center;">
+            <div class="col-3"><p>$19.990</p></div>
+            <div class="col-3"><p>$14.990</p></div>
+            <div class="col-3"><p>$24.990</p></div>
+            <div class="col-3"><p>$14.990</p></div>
         </div>
-    </div>
 </body>
 <footer>
     <div class="container-fluid">
