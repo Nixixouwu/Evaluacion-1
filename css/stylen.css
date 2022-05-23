@@ -65,6 +65,11 @@ html,body{height: 100%;}
     border-color: #198754;
 }
 
+.btn-verde {
+    color: #ffffff;
+    background-color: #198754;
+    border-color: #198754;
+}
 .header {
     width: 100%;
     padding: 0 8%;
@@ -149,15 +154,32 @@ nav{
     width: 100%;
 }
 
-.titulofooter{
+.titulo{
+    text-size-adjust: 35px;
+    font-family: 'Contrail One', cursive;
+    font-style: italic;
+    color: #385C3A;
 
+
+
+}
+.titulofooter{
+margin-top: 5px;
 margin-left: 4%;
+font-family: 'Open Sans', sans-serif;
+text-size-adjust: 23px;
+font-weight: bold;
 
 }
 
 .textofooter{
-
+    margin-top: 5px;
     margin-left: 4%;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-weight: lighter;
+    text-decoration: none;
+    text-size-adjust: 22px;
 
 }
 @keyframes slide {
@@ -173,5 +195,8 @@ margin-left: 4%;
     75% {margin-left: -300%;}
     100% {margin-left: -300%;}
 
-
+    
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
