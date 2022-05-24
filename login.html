@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/stylen.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
     <title>Regístrate</title>
 
 <script>
@@ -146,36 +149,10 @@ $("#contraseñac").focusout(function(){
 }
 );
 
-
-
-
-
-
-
-
 });
 
 
-
-
-
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </head>
@@ -187,7 +164,7 @@ $("#contraseñac").focusout(function(){
           <div class="col-12">
           <nav class="navbar navbar-expand-lg navbar-light bg-light flex-wrap flex-md-nowrap" aria-label="Main navigation">
               
-                <a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
+                <a class="navbar-brand" href="index.html"><img class="logo" src="img/logo.png"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -198,13 +175,13 @@ $("#contraseñac").focusout(function(){
                       <img class="btn btn-outline" type="submit" src="img/lupa.png" width="60px" style="margin-top: 20px ;"></a>
                   </li>
                   <li class="nav-item dropdown col-9 col-md-auto col-lg-auto">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="margin-top: 20px;">
+                      <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" style="margin-top: 20px;">
                   </li>
                     <li class="nav-item col-4 col-md-auto">
-                      <a class="nav-link" href="#"><img src="img/camion.png" width="60px"></a>
+                      <a class="nav-link" href="despacho_vendedor.html"><img src="img/camion.png" width="60px"></a>
                     </li>
                     <li class="nav-item col-4 col-md-auto">
-                      <a class="nav-link" href="#"><img src="img/carro de compras.png" width="60px" ></a>
+                      <a class="nav-link" href="carrito.html"><img src="img/carro de compras.png" width="60px" ></a>
                     </li>
       
                     <li class="nav-item dropdown col-4 col-md-auto">
@@ -224,8 +201,7 @@ $("#contraseñac").focusout(function(){
                         <a href="">¿Olvidaste tu contraseña?</a>
                         <br><br>
                         <button type="submit" class="btn btn-success" style="width: 100%;" >Iniciar sesión</button><br>
-                        <button type="button" class="btn btn-outline-dark" style="width: 100%;">Regístrate</button>
-                    </form>
+                        <a href="login.html"><button type="button" class="btn btn-outline-dark" style="width: 100%;">Regístrate</button></a>                    </form>
                       </ul>
                     </li>
                   </ul>
@@ -247,18 +223,25 @@ $("#contraseñac").focusout(function(){
                     Inicio
                 </a>
         </div>
+        <div class="col-md-3">
+            <div class="btn-group" style="width: 100%;">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Productos
+                </button>
+                <div class="dropdown-menu" style="width: 100%;">
+                  
+                  <a class="dropdown-item" href="herramientas.html">Herramientas</a>
+                  <a class="dropdown-item" href="plantas.html">Plantas</a>                                       
+                </div>
+              </div>                
+</div>
             <div class="col-md-3">
-                <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
-                    Productos
-                </a>
-        </div>
-            <div class="col-md-3">
-                <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                <a href="quienessomos.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
                     Quiénes somos
                 </a>
         </div>
             <div class="col-md-3">
-                <a href="index.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
+                <a href="donaciones.html" role="button" class="btn btn-outline-success" aria-disabled="true" style="width: 100%;">
                     Donaciones
                 </a>
         </div>
@@ -269,7 +252,7 @@ $("#contraseñac").focusout(function(){
 
 
         <div class="row">
-            <h1 style="color: #385C3A;">Regístrate</h1>
+            <h1 style="color: #385C3A;" class="titulo">Regístrate</h1>
             <div class="row">
 
             </div>
@@ -311,7 +294,7 @@ $("#contraseñac").focusout(function(){
 
 
     <div class="row">
-        <button type="submit" id="btnsubmit" class="registerbtn">Registrarme</button>
+        <button type="submit" id="btnsubmit" class="btn btn-outline-success register ">Registrarme</button>
     </div>
 
 
