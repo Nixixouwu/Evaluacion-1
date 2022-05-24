@@ -10,10 +10,154 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>Quiénes somos</title>
+    <title>Regístrate</title>
+
+<script>
+$(document).ready(function(){
+    //$("#btnsubmit").on("click", function() {
+        $("#nombre").focusout(function(){
+            
+                debugger;
+                if ($("#nombre").val().trim().length == 0) {
+                    //mostrar alerta
+                    $('#nombre')[0].setCustomValidity('Por favor, inserte su nombre.');
+                    $('#nombre')[0].reportValidity();
+
+                }
+            }
+    );
+
+    $("#apellido").focusout(function(){
+            
+            if ($("#apellido").val().trim().length == 0) {
+                //mostrar alerta
+                $('#apellido')[0].setCustomValidity('Por favor, inserte su apellido.');
+                $('#apellido')[0].reportValidity();
+
+            }
+        }
+);
+
+
+$("#rut").focusout(function() {
+// Despejar Punto1 (Sólo quito el primer punto que encuentre, que sería el punto del millón)
+var valor = rut.value.replace('.','');
+// Despejar Guión
+valor = valor.replace('-','');
+//Despejar Punto2 (Quito el punto de los miles que me queda)
+valor = valor.replace('.','');
+    
+    // Aislar Cuerpo y Dígito Verificador
+    cuerpo = valor.slice(0,-1);
+    dv = valor.slice(-1).toUpperCase();
+    
+    // Formatear RUN
+    rut.value = cuerpo + '-'+ dv
+    
+    // Si no cumple con el mínimo ej. (n.nnn.nnn)
+    if(cuerpo.length < 7) { $('#rut')[0].setCustomValidity('Rut incompleto');
+                            $('#rut')[0].reportValidity(); return false;}
+    
+    // Calcular Dígito Verificador
+    suma = 0;
+    multiplo = 2;
+    
+    // Para cada dígito del Cuerpo
+    for(i=1;i<=cuerpo.length;i++) {
+    
+        // Obtener su Producto con el Múltiplo Correspondiente
+        index = multiplo * valor.charAt(cuerpo.length - i);
+        
+        // Sumar al Contador General
+        suma = suma + index;
+        
+        // Consolidar Múltiplo dentro del rango [2,7]
+        if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+  
+    }
+    
+    // Calcular Dígito Verificador en base al Módulo 11
+    dvEsperado = 11 - (suma % 11);
+    
+    // Casos Especiales (0 y K)
+    dv = (dv == 'K')?10:dv;
+    dv = (dv == 0)?11:dv;
+    
+    // Validar que el Cuerpo coincide con su Dígito Verificador
+    if(dvEsperado != dv) { $('#rut')[0].setCustomValidity('Rut inválido.');
+                    $('#rut')[0].reportValidity(); return false; }
+    
+    // Si todo sale bien, eliminar errores (decretar que es válido)
+    rut.setCustomValidity('');
+    //mostrar alerta
+    console.log($("#rut")[0]);
+                    
+}
+
+)
+
+$("#email").focusout(function(){
+            
+            if ($("#email").val().trim().length == 0) {
+                //mostrar alerta
+                $('#email')[0].setCustomValidity('Por favor, ingrese su email.');
+                $('#email')[0].reportValidity();
+
+            }
+        }
+);
+
+$("#telefono").focusout(function(){
+            
+            if ($("#telefono").val().trim().length == 0) {
+                //mostrar alerta
+                $('#telefono')[0].setCustomValidity('Por favor, ingrese su número telefónico.');
+                $('#telefono')[0].reportValidity();
+
+            }
+        }
+);
+
+$("#contraseña").focusout(function(){
+            
+            if ($("#contraseña").val().trim().length == 0) {
+                //mostrar alerta
+                $('#contraseña')[0].setCustomValidity('Por favor, ingrese una contraseña.');
+                $('#contraseña')[0].reportValidity();
+
+            }
+        }
+);
+
+$("#contraseñac").focusout(function(){
+            
+            var contra = $("#contraseña").val();
+            var contrac = $("#contraseñac").val();
+
+            if (contra != contrac)
+            {
+            $('#contraseñac')[0].setCustomValidity('La contraseña no coincide.');
+            $('#contraseñac')[0].reportValidity();
+            }
+
+            else if ($("#contraseña").val().trim().length == 0)
+            {
+            $('#contraseñac')[0].setCustomValidity('Por favor, confirme su contraseña.');
+            $('#contraseñac')[0].reportValidity();
+            }
+            
+}
+);
+
+});
+
+
+</script>
+
+
 </head>
+
 <body>
-  <div class="body1">
 
     <header class="navbar navbar-expand-md bd-navbar bg-light">
         <div class="container-fluid">
@@ -69,11 +213,9 @@
       </header>
     <br>
 
-
-
     <div class="container-fluid">
 
-      
+
 
         <div class="row">
             <div class="col-md-3">
@@ -109,39 +251,57 @@
     <br>
 
 
- 
-
-
         <div class="row">
+            <h1 style="color: #385C3A;" class="titulo">Regístrate</h1>
+            <div class="row">
+
+            </div>
+            <div class="col-5">
+                <img src="img/imagenlogin.png" class="imagenlogin">
+            </div>
             
-        <div class="col-12 col-md-6" style="text-align: center; margin-top: 8%;">
-            <b style="font-size: xx-large;"> Nuestra visión </b>
-               
-            <p style="font-size: large;">Somos una comunidad que apoya a la fundación ONG. <br> A la vez
-                cuidamos del medio ambiente a través de la venta de plantas.</p>
+            <div class="col-7" style="background-color: rgb(175, 216, 185);">
+            <div class="form-group">
+                <br>
+                <input type="text" id="nombre" class="form-control" placeholder="Ingresa tu nombre">
+                <br>
+                <input type="text" id="apellido" class="form-control" placeholder="Ingresa tu apellido">
+                <br>
+                <input type="text" id="rut" class="form-control" placeholder="Ingresa tu rut">
+                <br>
+                <input type="email" id="email" class="form-control" placeholder="Ingresa tu e-mail">
+                <br>
+                <input type="number" id="telefono" class="form-control" placeholder="Ingresa tu número de teléfono">
+                <br>
+                <input type="password" id="contraseña" class="passwordbtn" placeholder="Crea tu contraseña">
+                <input type="password" id="contraseñac" class="passwordbtn" placeholder="Confirma tu contraseña">
+                <br> <br>
+                <input type="checkbox" id="terminos" class="form-check-input">
+                <label for="terminos" class="">Al registrarte aceptas los <a href="">términos y condiciones</a></label>
+                <br>
+                <input type="checkbox" id="notificaciones" class="form-check-input">
+                <label for="notificaciones">Recibir notificaciones sobre descuentos y promociones</label>
+
+                
+
+
+            </div>
+            <br>
         </div>
-        <div class="col-12 col-md-6">
-            <img src="img/qs1.jpg" class="imagen">
         </div>
+
+
+
+
+    <div class="row">
+        <button type="submit" id="btnsubmit" class="btn btn-outline-success register ">Registrarme</button>
     </div>
 
 
-        <div class="row">
-            <div class="col-12 col-md-6 ">
-                <img src="img/qs2.jpg" class="imagen" style="float: right;">
-            </div>
-        <div class="col-12 col-md-6" style="text-align: center; margin-top: 8%;">
+<br>
+</div>
 
-            <b style="font-size: xx-large;"> Nuestro compromiso </b>
-             
-             <p style="font-size: large;"> Nuestro compromiso con la gente que nos apoya es donar <br>
-              un 15 % de las ventas para apoyar el crecimiento de nuevos arboles</p>
-                </p>
-            </div>
-          
-        </div>
 
-    
 
 <br>
 
@@ -171,14 +331,14 @@
         </div>
     </div>
     </footer>
-    
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-     
-  </div>
+    
+
+
 </body>
 </html>

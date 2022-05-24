@@ -1,0 +1,200 @@
+html,body{height: 100%;
+
+}
+
+.button1 {
+
+    margin-left: 10%;
+    padding: 5px;
+    width: 300px;
+  }
+
+  .logo {
+    width: 120px;
+    padding: 7px;
+}
+
+.icono {
+    height: auto;
+    width: 60px;
+}
+
+.tflupa {
+    margin-left: -45px;
+    margin-top: 15px;
+}
+
+.inicio {
+    display: inline-block;
+    margin-left: 300px;
+}
+
+.imagen {
+    width: 100%;
+    height: auto;
+}
+
+.solid {
+    border-top: 3px solid black;
+}
+
+.gris {
+    width: 300px;
+    height: 300px;
+}
+
+.tituloizq {
+    margin-left: 1%;
+}
+
+.titulode {
+    margin-left: 65%;
+}
+
+.logo2
+{   margin-top: 5%;
+    position: relative;
+    width: 60%;
+
+}
+.iconos_superiores
+{   margin-top: 20%;
+    width: 50%;
+    left: 1px;
+    position: relative;
+
+}
+.lupa
+{   margin-top: 25%;
+    width: 30%;
+    left: 1px;
+    position: relative;
+    margin-left: 80%;
+
+} 
+.button1 {
+
+    margin-left: 10%;
+    padding: 5px;
+    width: 300px;
+  }
+.sub-titulo{
+    position: relative;
+    left: 20px;
+    margin-top: 300;
+}
+.sub-titulo{
+    width: auto;
+    height: auto;
+    margin:auto;
+}
+.titu4{
+    white-space: nowrap;
+    margin-left:10px;
+    vertical-align:bottom;
+}
+.imgdesp{
+    width:50%;
+    margin-top: 10%;
+    padding-left: 10px;
+}
+.radiobutton{
+    margin-left:0%;
+    margin-top: 15%;
+    width:50%;
+}
+.i-despacho{
+    width: 40%;
+    height: auto;
+}
+.despacho{
+    margin-top: 10%;
+    width:70%;
+}
+.entrega{
+    margin-top: 10%;
+    width: 70%;
+}
+#targetaD{
+    width:100%;
+    border-bottom: 3px solid #000000;
+}
+#targetaC{
+    width:100%;
+    border-bottom: 3px solid #000000;
+}
+#btn1{
+    margin: 50px;
+    margin-top: 90px;
+}
+#btn2{
+    margin: 50px;
+    margin-top: 90px;
+}
+#visa{
+    width: 300px;
+    margin-top: 60px;
+}
+#datos_targetaC{
+    padding-bottom:10px;
+    width: 100%;
+    display: none;
+    border-bottom: 3px solid #000000;
+}
+#datos_targetaD{
+    padding-bottom:10px;
+    width: 100%;
+    display: none;
+    border-bottom: 3px solid #000000;
+}
+.form_datos{
+    width: 50%;
+    padding: 20px;
+}
+.form_datos input{
+    width: 70%;
+    padding-top: 0px;
+    height: auto;
+}
+#btncompra{
+    margin-left: 10%;
+    width: 80%;
+}
+.titulo{
+    text-size-adjust: 35px;
+    font-family: 'Contrail One', cursive;
+    font-style: italic;
+    color: #385C3A;
+
+
+
+}
+.titulofooter{
+margin-top: 5px;
+margin-left: 4%;
+font-family: 'Open Sans', sans-serif;
+text-size-adjust: 23px;
+font-weight: bold;
+
+}
+
+.textofooter{
+    margin-top: 5px;
+    margin-left: 4%;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-weight: lighter;
+    text-decoration: none;
+    text-size-adjust: 22px;
+}
+.imagenong {
+    width: 60%;
+    height: auto; 
+    margin-top: 15%;
+
+}
+.btn-success {
+    color: #01690f;
+    background-color: #ffffff;
+    border-color: #01690f;
+}
