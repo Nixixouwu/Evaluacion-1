@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="{% static 'crud/css/styles.css' %}">
 
-    <link rel="icon" href="{% static 'crud/img/tools.svg' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'crud/img/logo.png' %}" type="image/x-icon">
     <!-- Inicio bloque CSS -->
     {% block css %}{% endblock %}
     <!-- FIN bloque CSS -->
@@ -27,10 +27,10 @@
 
 <body>
     <!--INICIO Seccion NAVBAR-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #385C3A;">
         <div class="container">
             <a class="navbar-brand" href="{% url 'product-list' %}">
-                <img class="img-logo" src="{% static 'crud/img/tools.svg' %}" alt="">
+                <img class="img-logo" src="{% static 'crud/img/logo.png' %}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
