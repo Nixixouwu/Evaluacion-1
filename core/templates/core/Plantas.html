@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'core/img/logo.png' %}" type="image/x-icon">
     <title>Tienda Jardín</title>
 </head>
 <body>
@@ -53,7 +54,7 @@
                 <form class="dropdown-menu p-4" style="position: absolute; transform: translate(-80px, 0px);">
                   <p>Inicia sesión</p>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Nombre">
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Correo">
                   </div>
                   <br>
                   <div class="form-group">
@@ -155,25 +156,29 @@
             });
             </script>
 
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3"><a href="{% url 'prod_p1' %}"><img class="imagen" src="{% static 'core/img/planta maceta gris.png' %}"></a> 
-                <p><center>Planta de macetero</center></p>
-                <p><center>$9.990</center></p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3"><a href="{% url 'prod_p2' %}"><img class="imagen" src="{% static 'core/img/cactus gris.png' %}"></a>
-                <p><center>Cactus de macetero</center></p>
-                <p><center>$9.990</center></p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3"><a href="{% url 'prod_p3' %}"><img class="imagen" src="{% static 'core/img/Costilla de adán gris.png' %}"></a>
-                <p><center>Costilla de adán</center></p>
-                <p><center>$19.990</center></p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3"><a href="{% url 'prod_p4' %}"><img class="imagen" src="{% static 'core/img/Echevería gris.png' %}" ></a>
-                <p><center>Echevería</center></p>
-                <p><center>$14.990</center></p>
-            </div>
-
-        </div>        
+<div class="container mt-2 mb-4">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    {%for p in productos %}
+    <div class="col">
+      <div class="card h-100" >
+        {% if p.imagen %}
+        <a href="/producto/{{p.idProducto}}"><img src="{{p.imagen.url}}" class="card-img-top" alt="{{p.idProducto}}"></a>
+        {% else %}
+        <img src="{% static 'crud/img/img_not_found.png' %}" class="card-img-top" alt="...">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">
+            <h4 class="card-text">{{p.descripcion}}</h4>
+          </h5>
+          <p href="/productos/{{p.marca.id}}">Marca: {{p.marca}}</p>
+          <p class="card-text">Precio: ${{p.precio}}</p>
+          <p class="card-text text-muted">Stock: {{p.stock}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>     
     <br>
 
     <footer>  

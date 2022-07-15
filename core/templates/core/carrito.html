@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Open+Sans:wght@300;500;700&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="{% static 'core/img/logo.png' %}" type="image/x-icon">
     <title>Carrito</title>
 </head>
 
@@ -59,7 +60,7 @@
                     <form class="dropdown-menu p-4" style="position: absolute; transform: translate(-80px, 0px);">
                       <p>Inicia sesión</p>
                       <div class="form-group">
-                        <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Nombre">
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Correo">
                       </div>
                       <br>
                       <div class="form-group">
@@ -134,7 +135,7 @@
                                 <img src="{% static 'core/img/tijera de podar gris.png'%}" style="width:50%;">
                             </div>
                             <div class="col-md-9" style="border-bottom: 3px solid #000;">
-                                <div id="item1" style="text-align: right;"><button type="button"
+                                <div id="item1" style="text-align: right;"><button class="btn-danger"type="button"
                                         onclick="borrar1()">X</button></div>
                                 <p>Producto: Tijeras para podar</p><br>
                                 <p>Precio: $19.990</p><br>
@@ -148,7 +149,7 @@
                                 <img src="{% static 'core/img/guantes gris.png '%}" style="width:50%;">
                             </div>
                             <div class="col-md-9" style="border-bottom: 3px solid #000;">
-                                <div id="item2" style="text-align: right;"><button type="button"
+                                <div id="item2" style="text-align: right;"><button class="btn-danger"type="button"
                                         onclick="borrar2()">X</button></div>
                                 <p>Producto: Guantes</p><br>
                                 <p>Precio: $14.990</p><br>
@@ -159,10 +160,10 @@
                     <div id="compra3" style="padding:1%;">
                         <div class="row">
                             <div class="col-md-3">
-                                <img src="{% static 'core/img/pala.png '%}" style="width:50%;">
+                                <img src="{% static 'core/img/pala gris.png '%}" style="width:50%;">
                             </div>
                             <div class="col-md-9" style="border-bottom: 3px solid #000;">
-                                <div id="item3" style="text-align: right;"><button type="button"
+                                <div id="item3" style="text-align: right;"><button class="btn-danger"type="button"
                                         onclick="borrar3()">X</button></div>
                                 <p>Producto: Pala</p><br>
                                 <p>Precio: $24.990</p><br>
@@ -176,7 +177,7 @@
                                 <img src="{% static 'core/img/desmalozadora.png '%}" style="width:50%;">
                             </div>
                             <div class="col-md-9" style="border-bottom: 3px solid #000;">
-                                <div id="item4" style="text-align: right;"><button type="button"
+                                <div id="item4" style="text-align: right;"><button class="btn-danger" type="button"
                                         onclick="borrar4()">X</button></div>
                                 <p>Producto: Desmalozadora</p><br>
                                 <p>Precio: $14.990</p><br>

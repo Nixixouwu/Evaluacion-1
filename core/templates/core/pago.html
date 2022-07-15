@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'core/img/logo.png' %}" type="image/x-icon">
     <title>Pago</title>
 
     <script type="text/javascript">
@@ -156,16 +157,16 @@
                         <div class="row">
                             <label >Número de tarjeta</label>
                             <br>
-                            <input type="number" id="numTarjetaD" style="width:40%; margin-left:1%;" >
+                            <input class="form-control" type="number" id="numTarjetaD" style="width:40%; margin-left:1%;" >
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <label > Fecha de expiración</label><br>
-                                <input type="date"  id="dateTarjetaD" style="width:50%;" >
+                                <input class="form-control" type="date"  id="dateTarjetaD" style="width:50%;" >
                             </div>
                             <div class="col-md-6">
                                 <label > CVV</label><br>
-                                <input type="password" maxlength="3" minlength="3" id="CVVTarjetaD" style="width:50% ;">
+                                <input class="form-control" type="password" maxlength="3" minlength="3" id="CVVTarjetaD" style="width:50% ;">
                             </div> 
                         </div>
                     </form>
@@ -188,20 +189,20 @@
                         <div class="row">
                             <label >Número de tarjeta</label>
                             <br>
-                            <input type="number" id="numTarjetaC" style="width: 40%; margin: 1%;">
+                            <input class="form-control" type="number" id="numTarjetaC" style="width: 40%; margin: 1%;">
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <label > Fecha de expiración</label><br>
-                                <input type="date" id="dateTarjetaC" style="width:30%;">
+                                <input class="form-control" type="date" id="dateTarjetaC" style="width:30%;">
                             </div>
                             <div class="col-md-4">
                                 <label > Cuotas</label><br>
-                                <input type="number" id="cuotaTarjetaC" style="width:30%;">
+                                <input class="form-control" type="number" id="cuotaTarjetaC" style="width:30%;">
                             </div>
                             <div class="col-md-4">
                                 <label > CVV</label><br>
-                                <input type="password" maxlength="3" minlength="3" id="CVVTarjetaC" style="width:30% ;">
+                                <input class="form-control" type="password" maxlength="3" minlength="3" id="CVVTarjetaC" style="width:30% ;">
                             </div> 
                         </div>
                     </form>

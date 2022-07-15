@@ -18,10 +18,13 @@ def donaciones(request):
     return render(request,'core/donaciones.html',)
 
 def herramientas(request):
-    return render(request,'core/herramientas.html',)
+    ProductosHerramientas = Producto.objects.filter(tipo_id=1)
+    return render(request,'core/herramientas.html', {"productos":ProductosHerramientas})
 
 def plantas(request):
-    return render(request,'core/plantas.html',)
+    ProductosPlantas = Producto.objects.filter(tipo_id=2)
+    return render(request,'core/plantas.html', {"productos":ProductosPlantas})
+
 
 def carrito(request):
     return render(request,'core/carrito.html',)
@@ -60,6 +63,11 @@ def productop4(request):
     return render(request,'core/producto p4.html',)
 
     
+
+#def product_by_ZA(request):
+#    productos = ordering=['-marca']
+#   return render(request,'core/herramientas.html',{'productos':productos})
+
 #def test(request):
 #  contexto = {"nombre":"Mundo"}
 #   return render(request, '', contexto)

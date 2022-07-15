@@ -75,3 +75,7 @@ def product_edit(request,product_id):
 def product_by_marca(request,marca):
     productos = Producto.objects.filter(marca=marca)
     return render(request,'crud/product_list.html',{'productos':productos})
+
+def product_by_tipo(request,tipo):
+    productos = Producto.objects.filter(tipo=tipo)
+    return render(request,'crud/product_list.html',{'productos':productos})

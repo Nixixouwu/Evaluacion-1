@@ -3,7 +3,7 @@ from django import forms
 from django.forms import ModelForm, widgets
 from .models import *
 
-class ProductoForm(forms.ModelForm):
+class ProductoForm(ModelForm):
 
     class Meta:
         model = Producto

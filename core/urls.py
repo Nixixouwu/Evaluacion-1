@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from .views import donaciones, home, quienessomos, herramientas, plantas, carrito, despacho_vendedor, login, pago, productoh1 , productoh2, productoh3, productoh4, productop1, productop2,productop3,productop4,root
 
 urlpatterns = [
     path('',root),
@@ -21,6 +21,8 @@ urlpatterns = [
     path('login',login,name="login"),
 
     path('pago',pago,name="pago"),
+
+    #path('producto/<str:producto>/',product_by_ZA,name='product-ZA'),
 
     path('producto herramienta 1',productoh1,name="prod_h1"),
     path('producto herramienta 2',productoh2,name="prod_h2"),

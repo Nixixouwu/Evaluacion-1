@@ -7,6 +7,7 @@ class Marca(models.Model):
     idMarca = models.IntegerField(primary_key=True, verbose_name='ID')
     marca = models.CharField(max_length=50, verbose_name='Marca')
 
+
     class Meta:
         verbose_name='marca'
         verbose_name_plural='marcas'
@@ -30,7 +31,7 @@ class Tipo(models.Model):
         return self.tipo
 
 class Producto(models.Model):
-    idProducto = models.CharField(primary_key=True, max_length=10, verbose_name='ID')
+    idProducto = models.CharField(primary_key=True, max_length=20, verbose_name='ID')
     descripcion = models.CharField(max_length=100, verbose_name='Descripcion')
     precio = models.IntegerField(verbose_name='Precio Unitario')
     stock = models.IntegerField(verbose_name='Stock')
