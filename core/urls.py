@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import donaciones, home, quienessomos, herramientas, plantas, carrito, despacho_vendedor, login, pago, productoh1 , productoh2, productoh3, productoh4, productop1, productop2,productop3,productop4,root
+from .views import *
 
 urlpatterns = [
     path('',root),

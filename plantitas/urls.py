@@ -18,11 +18,13 @@ from django.urls import path, include
 from django.conf import settings
 from crud import views as crud
 
+
 urlpatterns = [
     path('',include('core.urls')),
     path('crud/',include('crud.urls')),
     path('admin/', admin.site.urls),
     path('api/',include('api.urls')),
+    path('login_app/',include('login_app.urls'))
 ]
 
 if settings.DEBUG:

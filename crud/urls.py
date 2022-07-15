@@ -1,8 +1,10 @@
 from django.urls import path
+from login_app.views import login
+from login_app.views import homel, success
 from .views import *
 
 urlpatterns = [
-    path('',product_list,name='product-list'),
+    path('',login,name='product-list'),
     path('new/',product_new,name='product-new'),
     path('marca/<str:marca>/',product_by_marca,name='product-marca'),
     path('<str:product_id>/',product_detail,name='product-detail'),
