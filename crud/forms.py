@@ -19,11 +19,11 @@ class ProductoForm(forms.ModelForm):
         labels = {
             'idProducto':'Código Producto',
             'descripcion':'Descripción',
-            'precio':'Precio',
-            'stock':'Stock',            
+            'precio':'Precio Unitario',
+            'stock':'Stock',
             'marca':'Marca',
             'tipo':'Tipo',
-            'imagen':'Imagen',            
+            'imagen':'Imagen',
         }
         widgets = {
             'idProducto':forms.TextInput(attrs={'class':'form-control'}),

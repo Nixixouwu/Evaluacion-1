@@ -59,8 +59,6 @@ def productop3(request):
 def productop4(request):
     return render(request,'core/producto p4.html',)
 
-
-
     
 #def test(request):
 #  contexto = {"nombre":"Mundo"}
