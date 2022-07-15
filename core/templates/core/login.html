@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'core/css/stylen.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'core/img/logo.png' %}" type="image/x-icon">
+    <title>Regístrate</title>
+
+<script>
+$(document).ready(function(){
+    //$("#btnsubmit").on("click", function() {
+        $("#nombre").focusout(function(){
+            
+                debugger;
+                if ($("#nombre").val().trim().length == 0) {
+                    //mostrar alerta
+                    $('#nombre')[0].setCustomValidity('Por favor, inserte su nombre.');
+                    $('#nombre')[0].reportValidity();
+
+                }
+            }
+    );
+
+    $("#apellido").focusout(function(){
+            
+            if ($("#apellido").val().trim().length == 0) {
+                //mostrar alerta
+                $('#apellido')[0].setCustomValidity('Por favor, inserte su apellido.');
+                $('#apellido')[0].reportValidity();
+
+            }
+        }
+);
+
+
+$("#rut").focusout(function() {
+// Despejar Punto1 (Sólo quito el primer punto que encuentre, que sería el punto del millón)
+var valor = rut.value.replace('.','');
+// Despejar Guión
+valor = valor.replace('-','');
+//Despejar Punto2 (Quito el punto de los miles que me queda)
+valor = valor.replace('.','');
+    
+    // Aislar Cuerpo y Dígito Verificador
+    cuerpo = valor.slice(0,-1);
+    dv = valor.slice(-1).toUpperCase();
+    
+    // Formatear RUN
+    rut.value = cuerpo + '-'+ dv
+    
+    // Si no cumple con el mínimo ej. (n.nnn.nnn)
+    if(cuerpo.length < 7) { $('#rut')[0].setCustomValidity('Rut incompleto');
+                            $('#rut')[0].reportValidity(); return false;}
+    
+    // Calcular Dígito Verificador
+    suma = 0;
+    multiplo = 2;
+    
+    // Para cada dígito del Cuerpo
+    for(i=1;i<=cuerpo.length;i++) {
+    
+        // Obtener su Producto con el Múltiplo Correspondiente
+        index = multiplo * valor.charAt(cuerpo.length - i);
+        
+        // Sumar al Contador General
+        suma = suma + index;
+        
+        // Consolidar Múltiplo dentro del rango [2,7]
+        if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+  
+    }
+    
+    // Calcular Dígito Verificador en base al Módulo 11
+    dvEsperado = 11 - (suma % 11);
+    
+    // Casos Especiales (0 y K)
+    dv = (dv == 'K')?10:dv;
+    dv = (dv == 0)?11:dv;
+    
+    // Validar que el Cuerpo coincide con su Dígito Verificador
+    if(dvEsperado != dv) { $('#rut')[0].setCustomValidity('Rut inválido.');
+                    $('#rut')[0].reportValidity(); return false; }
+    
+    // Si todo sale bien, eliminar errores (decretar que es válido)
+    rut.setCustomValidity('');
+    //mostrar alerta
+    console.log($("#rut")[0]);
+                    
+}
+
+)
+
+$("#email").focusout(function(){
+            
+            if ($("#email").val().trim().length == 0) {
+                //mostrar alerta
+                $('#email')[0].setCustomValidity('Por favor, ingrese su email.');
+                $('#email')[0].reportValidity();
+
+            }
+        }
+);
+
+$("#telefono").focusout(function(){
+            
+            if ($("#telefono").val().trim().length == 0) {
+                //mostrar alerta
+                $('#telefono')[0].setCustomValidity('Por favor, ingrese su número telefónico.');
+                $('#telefono')[0].reportValidity();
+
+            }
+        }
+);
+
+$("#contraseña").focusout(function(){
+            
+            if ($("#contraseña").val().trim().length == 0) {
+                //mostrar alerta
+                $('#contraseña')[0].setCustomValidity('Por favor, ingrese una contraseña.');
+                $('#contraseña')[0].reportValidity();
+
+            }
+        }
+);
+
+$("#contraseñac").focusout(function(){
+            
+            var contra = $("#contraseña").val();
+            var contrac = $("#contraseñac").val();
+
+            if (contra != contrac)
+            {
+            $('#contraseñac')[0].setCustomValidity('La contraseña no coincide.');
+            $('#contraseñac')[0].reportValidity();
+            }
+
+            else if ($("#contraseña").val().trim().length == 0)
+            {
+            $('#contraseñac')[0].setCustomValidity('Por favor, confirme su contraseña.');
+            $('#contraseñac')[0].reportValidity();
+            }
+            
+}
+);
+
+});
+
+
+</script>
+
+
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-md bd-navbar bg-light">
+        <div class="container-fluid">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light flex-wrap flex-md-nowrap"
+              aria-label="Main navigation">
+    
+              <a class="navbar-brand" href="{% url 'home' %}"><img class="logo" src="{% static 'core/img/logo.png' %}"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    
+                <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                  <li class="nav-item col-3 col-md-auto col-lg-auto">
+                    <img class="btn btn-outline" type="submit" src="{% static 'core/img/lupa.png' %}" width="60px"
+                      style="margin-top: 20px ;"></a>
+                  </li>
+                  <li class="nav-item dropdown col-9 col-md-auto col-lg-auto">
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"
+                      style="margin-top: 20px;">
+                  </li>
+                  <li class="nav-item col-4 col-md-auto">
+                    <a class="nav-link" href="{% url 'desp_vend' %}"><img src="{% static 'core/img/camion.png' %}"
+                        width="60px"></a>
+                  </li>
+                  <li class="nav-item col-4 col-md-auto">
+                    <a class="nav-link" href="{% url 'carrito' %}"><img src="{% static 'core/img/carro de compras.png' %}"
+                        width="60px"></a>
+                  </li>
+    
+                  <li class="nav-item dropdown col-4 col-md-auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="{% static 'core/img/usuario.png' %}" width="60px">
+                    </a>
+                    <form class="dropdown-menu p-4" style="position: absolute; transform: translate(-80px, 0px);">
+                      <p>Inicia sesión</p>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Nombre">
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <input type="password" class="form-control" id="exampleDropdownFormPassword2"
+                          placeholder="Contraseña">
+                      </div>
+    
+                      <a href="">¿Olvidaste tu contraseña?</a>
+                      <br><br>
+                      <button type="submit" class="btn btn-success" style="width: 100%;">Iniciar sesión</button><br>
+                      <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-dark"
+                          style="width: 100%;">Regístrate</button></a>
+                    </form>
+                </ul>
+                </li>
+                </ul>
+              </div>
+          </div>
+    
+          </nav>
+        </div>
+      </header>
+    
+    
+      <div class="container-fluid">
+    
+        <div class="row">
+          <div class="col-md-3">
+            <a href="{% url 'home' %}" role="button" class="btn btn-outline-success" aria-disabled="true"
+              style="width: 100%;">
+              Inicio
+            </a>
+          </div>
+    
+          <div class="col-md-3">
+            <div class="btn-group" style="width: 100%;">
+              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Productos
+              </button>
+              <div class="dropdown-menu" style="width: 100%;">
+                <a class="dropdown-item" href="{% url 'herramientas' %}">Herramientas</a>
+                <a class="dropdown-item" href="{% url 'plantas' %}">Plantas</a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3">
+            <a href="{% url 'quienessomos' %}" role="button" class="btn btn-outline-success" aria-disabled="true"
+              style="width: 100%;">
+              Quiénes somos
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="{% url 'donaciones' %}" role="button" class="btn btn-outline-success" aria-disabled="true"
+              style="width: 100%;">
+              Donaciones
+            </a>
+          </div>
+        </div>
+    
+    
+    <br>
+
+
+        <div class="row">
+            <h1 style="color: #385C3A;" class="titulo">Regístrate</h1>
+            <div class="row">
+
+            </div>
+            <div class="col-5">
+                <img src="{% static 'core/img/imagenlogin.png' %}" class="imagenlogin">
+            </div>
+            
+            <div class="col-7" style="background-color: rgb(175, 216, 185);">
+            <div class="form-group">
+                <br>
+                <input type="text" id="nombre" class="form-control" placeholder="Ingresa tu nombre">
+                <br>
+                <input type="text" id="apellido" class="form-control" placeholder="Ingresa tu apellido">
+                <br>
+                <input type="text" id="rut" class="form-control" placeholder="Ingresa tu rut">
+                <br>
+                <input type="email" id="email" class="form-control" placeholder="Ingresa tu e-mail">
+                <br>
+                <input type="number" id="telefono" class="form-control" placeholder="Ingresa tu número de teléfono">
+                <br>
+                <input type="password" id="contraseña" class="passwordbtn" placeholder="Crea tu contraseña">
+                <input type="password" id="contraseñac" class="passwordbtn" placeholder="Confirma tu contraseña">
+                <br> <br>
+                <input type="checkbox" id="terminos" class="form-check-input">
+                <label for="terminos" class="">Al registrarte aceptas los <a href="">términos y condiciones</a></label>
+                <br>
+                <input type="checkbox" id="notificaciones" class="form-check-input">
+                <label for="notificaciones">Recibir notificaciones sobre descuentos y promociones</label>
+
+                
+
+
+            </div>
+            <br>
+        </div>
+        </div>
+
+
+
+
+    <div class="row">
+        <button type="submit" id="btnsubmit" class="btn btn-outline-success register ">Registrarme</button>
+    </div>
+
+
+<br>
+</div>
+
+
+
+<br>
+
+    <footer>  
+
+        <div class="row">
+            <div class="col-12 col-md-3 col-lg-3" style="background-color: rgba(200,219,201,255);">
+            <b><h4 class="titulofooter">TIENDAJARDÍN</h4></b>
+            <a class="textofooter" href="">Quiénes somos</a>  <br>
+            <a class="textofooter" href="">Vende en Tienda Jardín</a>  <br>
+            <a class="textofooter" href="">Despachos</a> <br>
+            <a class="textofooter" href="">Cambios y devoluciones</a>  <br>
+            <a class="textofooter" href="">Contacto</a>  <br>
+            <a class="textofooter" href="">Términos de servicio</a>  <br>
+            <a class="textofooter" href="">Política de reembolso</a> 
+            </div>
+            <div class="col-12 col-md-7 col-lg-7" style="background-color: rgba(200,219,201,255);">
+            <b><h4 class="titulofooter">Contactos:</h4></b>
+            <a class="textofooter" href=""> contacto@TuJardinDeTotoras.cl</a> <br>
+            <a class="textofooter" href=""> Políticas de privacidad </a> <br>
+            <a class="textofooter" href=""> Términos y condiciones </a>
+            </div>
+            <div class="col-12 col-md-2 col-lg-2" style="background-color: rgba(200,219,201,255);">
+                <img src="{% static 'core/img/ong.png' %}" class="imagenong">
+    
+            </div>
+        </div>
+    </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+
+
+</body>
+</html>
